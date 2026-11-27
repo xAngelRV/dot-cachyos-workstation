@@ -1,40 +1,47 @@
-add_newline = false
+add_newline = true
+
+format = "$directory$git_branch$git_status$nodejs$python$java$c$cmd_duration$line_break$character"
 
 [directory]
-style = "bold #89b4fa"
+style = "#c4a7e7"
 truncation_length = 3
-truncate_to_repo = true
+truncate_to_repo = false
+format = "[$path]($style) "
 
 [git_branch]
 symbol = " "
-style = "bold #cba6f7"
-format = "on [$symbol$branch]($style) "
+style = "#ea9a97"
+format = "[$symbol$branch]($style) "
 
 [git_status]
-style = "bold #f38ba8"
+style = "#eb6f92"
 format = "([$all_status$ahead_behind]($style) )"
-
-[nodejs]
-symbol = " "
-style = "bold #a6e3a1"
-format = "via [$symbol($version )]($style)"
-
-[python]
-symbol = " "
-style = "bold #f9e2af"
-format = "via [$symbol$pyenv_prefix($version )($virtualenv )]($style)"
-
-[java]
-symbol = " "
-style = "bold #fab387"
-format = "via [$symbol($version )]($style)"
-
-[c]
-symbol = " "
-style = "bold #74c7ec"
-format = "via [$symbol($version )]($style)"
 
 [cmd_duration]
 min_time = 2000
-style = "bold #f5c2e7"
-format = "took [$duration]($style) "
+style = "#f6c177"
+format = "[ $duration]($style) "
+
+[character]
+success_symbol = "[❯](#ea9a97)"
+error_symbol = "[❯](#eb6f92)"
+
+[nodejs]
+symbol = " "
+style = "#9ccfd8"
+format = "[$symbol($version )]($style)"
+
+[python]
+symbol = " "
+style = "#f6c177"
+format = "[$symbol($version )]($style)"
+
+[java]
+symbol = " "
+style = "#ea9a97"
+format = "[$symbol($version )]($style)"
+
+[c]
+symbol = " "
+style = "#3e8fb0"
+format = "[$symbol($version )]($style)"

@@ -1,0 +1,13 @@
+[Unit]
+Description=Enlazar salida virtual hacia Windows RTP
+After=pipewire.service wireplumber.service
+Requires=pipewire.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=/usr/bin/sleep 2
+ExecStart=/bin/sh -c "pw-link -d alsa_input.pci-0000_00_09.2.analog-stereo:capture_FL scream-rtp-out:send_FL 2>/dev/null; pw-link -d alsa_input.pci-0000_00_09.2.analog-stereo:capture_FR scream-rtp-out:send_FR 2>/dev/null; pw-link scream-virtual-sink:monitor_FL scream-rtp-out:send_FL 2>/dev/null; pw-link scream-virtual-sink:monitor_FR scream-rtp-out:send_FR 2>/dev/null; true"
+
+[Install]
+WantedBy=default.target

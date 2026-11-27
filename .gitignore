@@ -1,0 +1,4 @@
+.DS_Store
+*.bak
+*.tmp
+.config/fish/fish_variables

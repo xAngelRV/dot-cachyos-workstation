@@ -1,0 +1,10 @@
+[9438e929-e485-435d-84ad-ceb18c1bf2ec]
+Description=Application settings for xfce4-terminal
+decorationpolicy=none
+decorationpolicyrule=2
+wmclass=xfce4-terminal
+wmclassmatch=1
+
+[General]
+Order=9438e929-e485-435d-84ad-ceb18c1bf2ec
+rules=
